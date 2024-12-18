@@ -7,7 +7,7 @@ Below are the tables from the paper converted into Markdown format:
 ### Table 1: Quantitative comparisons of 1024 × 1024 resolution leading text-to-image models
 
 | Model                        | Steps ↓ | Type   | Params ↓ | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | Inference Time ↓ (per 10 images) |
-|------------------------------|---------|--------|----------|----------------|-------------|-------------|-------------|----------------------------------|
+|------------------------------|---------|--------|----------|----------------|-------------|-------------|-------------|--------------------------------------|
 |||||||||**Multi-step Models**|
 | SDXL-BASE (Podell et al., 2023)      | 50      | UNET   | 2.6B    | 0.887          | 5.72        | 0.2274      | 32.72      | 111 sec                          |
 | SDXL-DPO (Wallace et al., 2024)     | 50      | UNET   | 2.6B    | 1.102          | 5.77        | 0.2290      | 33.03      | 111 sec                          |
