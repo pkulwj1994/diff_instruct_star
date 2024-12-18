@@ -18,9 +18,15 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
 
 ## The Diff-Instruct Family
 
-Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. [Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. [Flow Generator Matching](https://arxiv.org/abs/2410.19310) further generalizes the general score-based divergence to Flow Matching Models. 
+Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. 
 
-[Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
+[Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. 
+
+[Flow Generator Matching](https://arxiv.org/abs/2410.19310) further generalizes the general score-based divergence to Flow Matching Models. 
+
+[Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. 
+
+Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
 
 In this project, we implement Diff-Instruct family models based on [DMD2](https://github.com/tianweiy/DMD2) as the initial 1-step model. We show that tough SIM, Diff-Instruct++, and Diff-Instruct show decent performances, Diff-Instruct\* results in the best human-preference-aligned model, the **DI\*-SDXL-1step model**, which outperforms current leading diffusion models such as [FLUX-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) by [Black Forest Lab](https://blackforestlabs.ai/) and [SD3.5-large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) by [Stability AI](https://stability.ai/). 
 
