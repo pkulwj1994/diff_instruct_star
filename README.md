@@ -10,16 +10,16 @@ Below are the tables from the paper converted into Markdown format:
 |------------------------------|---------|--------|----------|----------------|-------------|-------------|-------------|--------------------------------------|
 |||||||||**Multi-step Models**|
 | SDXL-BASE (Podell et al., 2023)      | 50      | UNET   | 2.6B    | 0.887          | 5.72        | 0.2274      | 32.72      | 111 sec                          |
-| SDXL-DPO (Wallace et al., 2024)     | 50      | UNET   | 2.6B    | 1.102          | 5.77        | 0.2290      | 33.03      | 111 sec                          |
-| SD3.5-LARGE (SD3)            | 28      | DIT    | 8B       | 1.133          | 5.70        | 0.2306      | 32.70      | 66.23 sec                        |
-| FLUX-DEV (FLU)               | 50      | DIT    | 12B      | 1.132          | 5.90        | 0.2317      | 31.70      | 118.64 sec                       |
+| SDXL-DPO (Wallace et al., 2024)     | 50      | UNET   | 2.6B    | 1.102          | 5.77        | 0.2290      | **33.03**      | 111 sec                          |
+| SD3.5-LARGE (SD3)            | 28      | DIT    | 8B       | **1.133**          | 5.70        | 0.2306      | 32.70      | 66.23 sec                        |
+| FLUX-DEV (FLU)               | 50      | DIT    | 12B      | 1.132          | **5.90**        | **0.2317**      | 31.70      | 118.64 sec                       |
 |||||||||**1-step Models**|
 | DMD2-SDXL (Yin et al., 2024) | 1       | UNET   | 2.6B    | 0.930          | 5.51        | 0.2249      | 32.97      | 2.22 sec                         |
-| DIFF-INSTRUCT† (Luo et al., 2024b)  | 1       | UNET   | 2.6B    | 1.058          | 5.60        | 0.2253      | 33.02      | 2.22 sec                         |
-| SIM† (Luo et al., 2024c)     | 1       | UNET   | 2.6B    | 1.049          | 5.66        | 0.2273      | 32.93      | 2.22 sec                         |
-| DIFF-INSTRUCT++-SDXL† (Luo, 2024)  | 1       | UNET   | 2.6B    | 1.061          | 5.58        | 0.2260      | 32.94      | 2.22 sec                         |
+| DIFF-INSTRUCT (Luo et al., 2024b)  | 1       | UNET   | 2.6B    | 1.058          | 5.60        | 0.2253      | **33.02**      | 2.22 sec                         |
+| SIM (Luo et al., 2024c)     | 1       | UNET   | 2.6B    | 1.049          | 5.66        | 0.2273      | 32.93      | 2.22 sec                         |
+| DIFF-INSTRUCT++-SDXL (Luo, 2024)  | 1       | UNET   | 2.6B    | 1.061          | 5.58        | 0.2260      | 32.94      | 2.22 sec                         |
 | **DI*-SDXL (Ours)**          | 1       | UNET   | 2.6B    | 1.067          | 5.74        | 0.2304      | 32.82      | 2.22 sec                         |
-| **DI*-SDXL (Longer Training)** | 1       | UNET   | 2.6B    | 1.140          | 5.83        | 0.2331      | 32.75      | 2.22 sec                         |
+| **DI*-SDXL (Longer Training)** | **1**       | UNET   | **2.6B**    | **1.140**          | **5.83**        | **0.2331**      | 32.75      | **2.22 sec**                         |
 
 ---
 
