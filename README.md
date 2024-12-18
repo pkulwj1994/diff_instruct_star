@@ -13,7 +13,6 @@ Below are the tables from the paper converted into Markdown format:
 | SD3.5-LARGE (SD3)            | 28      | DIT    | 8B       | 1.133          | 5.70        | 0.2306      | 32.70      | 66.23 sec                        |
 | FLUX-DEV (FLU)               | 50      | DIT    | 12B      | 1.132          | 5.90        | 0.2317      | 31.70      | 118.64 sec                       |
 |------------------------------|---------|--------|----------|----------------|-------------|-------------|-------------|----------------------------------|
-lines at the ends
 | **1-step Models** |
 | DMD2-SDXL (Yin et al., 2024) | 1       | UNET   | 2.6B    | 0.930          | 5.51        | 0.2249      | 32.97      | 2.22 sec                         |
 | DIFF-INSTRUCT† (Luo et al., 2024b)  | 1       | UNET   | 2.6B    | 1.058          | 5.60        | 0.2253      | 33.02      | 2.22 sec                         |
