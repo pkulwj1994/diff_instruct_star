@@ -4,6 +4,8 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
 
 **DI\*-SDXL-1step** model is a leading human-preferred 1024x1024 text-to-image generative model that outperforms FLUX-dev-50step with only **1.88% inference time** and **29.30% GPU memory cost** on Parti and HPSv2.1 benchmarks. 
 
+![image/jpeg](assets/big_demo_pr1.jpeg)
+
 ## Highlights
 
 - **One-Step Text-to-Image Generation**: The DI*-SDXL-1step model generates high-resolution images (1024 × 1024) in a single forward pass, achieving unprecedented efficiency and performance.
@@ -13,9 +15,6 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
   - **Parti Prompt Benchmark**: Sets new records in PickScore, ImageReward, and CLIPScore.
   - **HPSv2.1 Benchmark**: Achieves a record-breaking human preference score of 31.19.
 - **Open Source**: Industry-ready model available for public use.
-
-![image/jpeg](assets/big_demo_pr1.jpeg)
-
 
 ## Model Overview
 
