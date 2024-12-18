@@ -18,7 +18,9 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
 
 ## The Diff-Instruct Family
 
-Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. [Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. [Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
+Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. [Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. [Flow Generator Matching](https://arxiv.org/abs/2410.19310) further generalizes the general score-based divergence to Flow Matching Models. 
+
+[Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
 
 In this project, we implement Diff-Instruct family models based on [DMD2](https://github.com/tianweiy/DMD2) as the initial 1-step model. We show that tough SIM, Diff-Instruct++, and Diff-Instruct show decent performances, Diff-Instruct\* results in the best human-preference-aligned model, the **DI\*-SDXL-1step model**, which outperforms current leading diffusion models such as [FLUX-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) by [Black Forest Lab](https://blackforestlabs.ai/) and [SD3.5-large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) by [Stability AI](https://stability.ai/). 
 
@@ -153,37 +155,62 @@ for i,image in enumerate(images):
 images[-1].show()  # show the last image
 ```
 
-### Usage
-1. **Generate Images**:
-   ```bash
-   python generate.py --prompt "A shiba inu sitting on a beach at sunset, 4k, ultra-realistic"
-   ```
-2. **Fine-Tune the Model**:
-   Use the provided scripts to train or fine-tune models with custom datasets and prompts.
-
-   
 
 ## Citation
 
 If you use Diff-Instruct\* in your research, please cite our paper:
 ```bibtex
-@article{luo2024diff,
+@article{luo2024diffinstructstar,
   title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
   author={Luo, Weijian and Zhang, Colin and Zhang, Debing and Geng, Zhengyang},
   journal={arXiv preprint arXiv:2410.20898},
   year={2024}
 }
+
+@article{luo2024diffinstruct,
+  title={Diff-instruct: A universal approach for transferring knowledge from pre-trained diffusion models},
+  author={Luo, Weijian and Hu, Tianyang and Zhang, Shifeng and Sun, Jiacheng and Li, Zhenguo and Zhang, Zhihua},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2024}
+}
+
+@article{luo2024one,
+  title={One-step diffusion distillation through score implicit matching},
+  author={Luo, Weijian and Huang, Zemin and Geng, Zhengyang and Kolter, J Zico and Qi, Guo-jun},
+  journal={arXiv preprint arXiv:2410.16794},
+  year={2024}
+}
+
+@article{luo2024diffinstructpp,
+  title={Diff-instruct++: Training one-step text-to-image generator model to align with human preferences},
+  author={Luo, Weijian},
+  journal={arXiv preprint arXiv:2410.18881},
+  year={2024}
+}
+
+@article{huang2024flow,
+  title={Flow generator matching},
+  author={Huang, Zemin and Geng, Zhengyang and Luo, Weijian and Qi, Guo-jun},
+  journal={arXiv preprint arXiv:2410.19310},
+  year={2024}
+}
+
+@article{luo2023comprehensive,
+  title={A comprehensive survey on knowledge distillation of diffusion models},
+  author={Luo, Weijian},
+  journal={arXiv preprint arXiv:2304.04262},
+  year={2023}
+}
 ```
 
----
 
 ## Contributing
 
 We welcome contributions to improve Diff-Instruct\*. Please see the `CONTRIBUTING.md` file for details.
 
----
 
-For more information, visit our [paper](https://github.com/pkulwj1994/diff_instruct_star).
+For more information, visit our [paper](https://arxiv.org/abs/2410.20898).
 
 
 
