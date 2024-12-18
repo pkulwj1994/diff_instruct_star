@@ -206,7 +206,7 @@ images[-1].show()  # show the last image
 
 ### Table 3: Ablation study on Parti Prompts of DI*-SDXL-1step models
 
-| Model                          | Steps | Params | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | ($\alpha_{rev}$, \alpha_{cfg}) |
+| Model                          | Steps | Params | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | ($\alpha_{rev}$, $\alpha_{cfg}$) |
 |--------------------------------|-------|--------|----------------|-------------|-------------|-------------|--------------|
 | DMD2-SDXL (Init Model)         | 1     | 2.6B   | 0.938          | 5.51        | 0.2249      | 32.97       | -            |
 | DI++-SDXL (Aligned Using KL)  | 1     | 2.6B   | 0.846          | 5.50        | 0.2243      | 32.66       | (0, 0)       |
