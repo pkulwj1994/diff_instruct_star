@@ -1,4 +1,4 @@
-# Diff-Instruct\*: Towards Human-Preferred One-Step Text-to-Image Generative Models
+# Diff-Instruct\*: 1-step Text-to-image Models Outperforms Flow-matching Models through Score-based RLHF
 
 Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art preference alignment approach for 1024x1024 res 1-step text-to-image generative models. Diff-Instruct\* is built upon a new **score-based RLHF** theory, which improves human preferences while maintaining generation diversity. 
 
