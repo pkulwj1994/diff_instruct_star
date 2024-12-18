@@ -2,7 +2,8 @@
 We introduce DI\*-SDX-1step Model, which is a leading human-preferred 1-step text-to-image model of 1024 resolution.
 
 
-![Figure from PDF](assets/big_demo_pr1.pdf "Figure from PDF")
+![image/jpeg](assets/teaser.jpg)
+
 
 
 Below are the tables from the paper converted into Markdown format:
