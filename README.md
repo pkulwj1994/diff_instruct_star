@@ -4,9 +4,51 @@ We introduce DI\*-SDX-1step Model, which is a leading human-preferred 1-step tex
 
 ![image/jpeg](assets/big_demo_pr1.jpeg)
 
+## Workflow of developing photo-realistic human-preferred 1-step text-to-image generative models
+
+![image/jpeg](assets/pipeline_distar.png)
+
+## Comparison with other leading models: 12B FLUX-dev and 8B Stable Diffusion 3.5-large
+
+![image/jpeg](assets/big_demo_fixed.jpeg)
 
 
-Below are the tables from the paper converted into Markdown format:
+## Photo-realistic image generation across diverse image domains
+
+### Animals
+
+![image/jpeg](assets/animals.jpeg)
+
+### Fantasis
+
+![image/jpeg](assets/fantasis.jpeg)
+
+### Items
+
+![image/jpeg](assets/items.jpeg)
+
+### Foods
+
+![image/jpeg](assets/foods.jpeg)
+
+### Natural Scenes
+
+![image/jpeg](assets/natures.jpeg)
+
+### Others
+
+![image/jpeg](assets/others.jpeg)
+
+## Comparison with other 1-step Models and SDXL w/o DPO
+
+![image/jpeg](assets/big_compare_woman.jpeg)
+
+![image/jpeg](assets/big_compare_tower.jpeg)
+
+![image/jpeg](assets/big_compare_lego.jpeg)
+
+
+
 
 ### Table 1: Quantitative comparisons of 1024 × 1024 resolution leading text-to-image models
 
