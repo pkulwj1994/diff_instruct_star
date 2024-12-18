@@ -27,7 +27,10 @@ In this project, we implement Diff-Instruct family models based on [DMD2](https:
 
 ## How Diff-Instruct\* Works
 
-The Diff-Instruct\* framework frames human preference alignment as a reinforcement learning task with a reward function constrained by score-based divergence regularization. This approach:
+![image/jpeg](assets/pipeline_distar.png)
+
+The Diff-Instruct\* proposed a novel **score-based RLHF** for preference alignment of 1-step text-to-image generative models. This approach:
+- Injects human preferences into 1-step text-to-image models in a post-training manner
 - Prevents mode collapse and preserves diversity.
 - Supports better image layouts, aesthetic details, and user prompt adherence.
 
@@ -38,7 +41,6 @@ The Diff-Instruct\* framework frames human preference alignment as a reinforceme
   - Outperforms 12B FLUX-dev-50step and 8B SD3.5-large-28step in human preference benchmarks.
   - Maintains competitive quality on COCO and Parti benchmarks with vastly reduced computational costs.
 
----
 
 ## Getting Started
 
@@ -155,71 +157,7 @@ for i,image in enumerate(images):
 images[-1].show()  # show the last image
 ```
 
-
-## Citation
-
-If you use Diff-Instruct\* in your research, please cite our paper:
-```bibtex
-@article{luo2024diffinstructstar,
-  title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
-  author={Luo, Weijian and Zhang, Colin and Zhang, Debing and Geng, Zhengyang},
-  journal={arXiv preprint arXiv:2410.20898},
-  year={2024}
-}
-
-@article{luo2024diffinstruct,
-  title={Diff-instruct: A universal approach for transferring knowledge from pre-trained diffusion models},
-  author={Luo, Weijian and Hu, Tianyang and Zhang, Shifeng and Sun, Jiacheng and Li, Zhenguo and Zhang, Zhihua},
-  journal={Advances in Neural Information Processing Systems},
-  volume={36},
-  year={2024}
-}
-
-@article{luo2024one,
-  title={One-step diffusion distillation through score implicit matching},
-  author={Luo, Weijian and Huang, Zemin and Geng, Zhengyang and Kolter, J Zico and Qi, Guo-jun},
-  journal={arXiv preprint arXiv:2410.16794},
-  year={2024}
-}
-
-@article{luo2024diffinstructpp,
-  title={Diff-instruct++: Training one-step text-to-image generator model to align with human preferences},
-  author={Luo, Weijian},
-  journal={arXiv preprint arXiv:2410.18881},
-  year={2024}
-}
-
-@article{huang2024flow,
-  title={Flow generator matching},
-  author={Huang, Zemin and Geng, Zhengyang and Luo, Weijian and Qi, Guo-jun},
-  journal={arXiv preprint arXiv:2410.19310},
-  year={2024}
-}
-
-@article{luo2023comprehensive,
-  title={A comprehensive survey on knowledge distillation of diffusion models},
-  author={Luo, Weijian},
-  journal={arXiv preprint arXiv:2304.04262},
-  year={2023}
-}
-```
-
-
-## Contributing
-
-We welcome contributions to improve Diff-Instruct\*. Please see the `CONTRIBUTING.md` file for details.
-
-
-For more information, visit our [paper](https://arxiv.org/abs/2410.20898).
-
-
-
-
-## Workflow of developing photo-realistic human-preferred 1-step text-to-image generative models
-
-![image/jpeg](assets/pipeline_distar.png)
-
-## Comparison with other leading models: 12B FLUX-dev and 8B Stable Diffusion 3.5-large
+## Quantitative and Qualitative comparison with other leading models: 12B FLUX-dev and 8B Stable Diffusion 3.5-large
 
 ### Table 1: Quantitative comparisons of 1024 × 1024 resolution leading text-to-image models
 
@@ -309,3 +247,63 @@ For more information, visit our [paper](https://arxiv.org/abs/2410.20898).
 ### Others
 
 ![image/jpeg](assets/others.jpeg)
+
+## Citation
+
+If you use Diff-Instruct\* in your research, please cite our paper:
+```bibtex
+@article{luo2024diffinstructstar,
+  title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
+  author={Luo, Weijian and Zhang, Colin and Zhang, Debing and Geng, Zhengyang},
+  journal={arXiv preprint arXiv:2410.20898},
+  year={2024}
+}
+
+@article{luo2024diffinstruct,
+  title={Diff-instruct: A universal approach for transferring knowledge from pre-trained diffusion models},
+  author={Luo, Weijian and Hu, Tianyang and Zhang, Shifeng and Sun, Jiacheng and Li, Zhenguo and Zhang, Zhihua},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2024}
+}
+
+@article{luo2024one,
+  title={One-step diffusion distillation through score implicit matching},
+  author={Luo, Weijian and Huang, Zemin and Geng, Zhengyang and Kolter, J Zico and Qi, Guo-jun},
+  journal={arXiv preprint arXiv:2410.16794},
+  year={2024}
+}
+
+@article{luo2024diffinstructpp,
+  title={Diff-instruct++: Training one-step text-to-image generator model to align with human preferences},
+  author={Luo, Weijian},
+  journal={arXiv preprint arXiv:2410.18881},
+  year={2024}
+}
+
+@article{huang2024flow,
+  title={Flow generator matching},
+  author={Huang, Zemin and Geng, Zhengyang and Luo, Weijian and Qi, Guo-jun},
+  journal={arXiv preprint arXiv:2410.19310},
+  year={2024}
+}
+
+@article{luo2023comprehensive,
+  title={A comprehensive survey on knowledge distillation of diffusion models},
+  author={Luo, Weijian},
+  journal={arXiv preprint arXiv:2304.04262},
+  year={2023}
+}
+```
+
+
+## Contributing
+
+We welcome contributions to improve Diff-Instruct\*. Please see the `CONTRIBUTING.md` file for details.
+
+
+For more information, visit our [paper](https://arxiv.org/abs/2410.20898).
+
+## Acknolwegement
+
+This project was launched by the AGI team of Xiaohongshu Inc. The project was done while Weijian Luo was a full-time student at Peking University. Our model was developed based on our internal reimplementation of the Diff-Instruct paper. We do acknowledge the DMD2 project which provides high-quality open-sourced 1-step text-to-image models that we have used as the initial model (i.e., a model without preference alignment). We also acknowledge the authors of the SiD-LSG project for their high-quality implementation of SD1.5-based diffusion distillation models. 
