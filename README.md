@@ -1,21 +1,8 @@
-# Diff-Instruct-star
-We introduce DI\*-SDX-1step Model, which is a leading human-preferred 1-step text-to-image model of 1024 resolution.
-
-
-![image/jpeg](assets/big_demo_pr1.jpeg)
-
-
-
-
-Here's a GitHub introduction page draft for the "DIFF-INSTRUCT\*: Towards Human-Preferred One-Step Text-to-Image Generative Models" paper.
-
----
-
 # Diff-Instruct\*: Towards Human-Preferred One-Step Text-to-Image Generative Models
 
 Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through reinforcement learning with score-based divergence regularization.
 
----
+**DI\*-SDXL-1step** model is a leading human-preferred 1024x1024 text-to-image generative model that outperforms FLUX-dev-50step with only **1.88% inference time** and **29.30% GPU memory cost** on Parti and HPSv2.1 benchmarks. 
 
 ## Highlights
 
@@ -27,7 +14,8 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
   - **HPSv2.1 Benchmark**: Achieves a record-breaking human preference score of 31.19.
 - **Open Source**: Industry-ready model available for public use.
 
----
+![image/jpeg](assets/big_demo_pr1.jpeg)
+
 
 ## Model Overview
 
