@@ -1,6 +1,6 @@
 # Diff-Instruct\*: Towards Human-Preferred One-Step Text-to-Image Generative Models
 
-Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through reinforcement learning with score-based divergence regularization.
+Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through **score-based RLHF**.
 
 **DI\*-SDXL-1step** model is a leading human-preferred 1024x1024 text-to-image generative model that outperforms FLUX-dev-50step with only **1.88% inference time** and **29.30% GPU memory cost** on Parti and HPSv2.1 benchmarks. 
 
@@ -16,7 +16,9 @@ Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the
   - **HPSv2.1 Benchmark**: Achieves a record-breaking human preference score of 31.19.
 - **Open Source**: Industry-ready model available for public use.
 
-## Model Overview
+## The Diff-Instruct Family
+
+Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. [Score-implicit Matching](https://arxiv.org/abs/2410.16794) 
 
 ### Diff-Instruct\* Framework
 
