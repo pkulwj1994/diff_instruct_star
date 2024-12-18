@@ -38,7 +38,7 @@ Below are the tables from the paper converted into Markdown format:
 | DI\*-IN-SDXL                   | 1     | 2.6B   | 1.048          | 5.66        | 0.2278      | 32.91       | (10, 7.5)    |
 | DI\*-IN-SDXL                   | 1     | 2.6B   | 1.020          | 5.68        | 0.2278      | 32.82       | (100, 4.5)   |
 | **DI\*-IN-SDXL**                | 1     | 2.6B   | 1.067          | 5.74        | 0.2304      | 32.82       | (100, 7.5)   |
-| **DI\*-IN-SDXL (Best, Longer Training)** | **1**     | **2.6B**   | **1.140**          | **5.83**        | **0.2331**      | 32.75       | (100, 7.5)   |
+| **DI\*-IN-SDXL (Longer Training)** | **1**     | **2.6B**   | **1.140**          | **5.83**        | **0.2331**      | 32.75       | (100, 7.5)   |
 
 ---
 
