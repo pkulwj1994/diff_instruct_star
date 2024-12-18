@@ -25,20 +25,20 @@ Below are the tables from the paper converted into Markdown format:
 
 ### Table 2: Ablation study on Parti Prompts of DI*-SDXL-1step models
 
-| Model                          | Steps | Params | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | (αrev, αcfg) |
+| Model                          | Steps | Params | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | ($\alpha_{rev}$, \alpha_{cfg}) |
 |--------------------------------|-------|--------|----------------|-------------|-------------|-------------|--------------|
 | DMD2-SDXL (Init Model)         | 1     | 2.6B   | 0.938          | 5.51        | 0.2249      | 32.97       | -            |
-| DI++-SDXL† (Aligned Using KL)  | 1     | 2.6B   | 0.846          | 5.50        | 0.2243      | 32.66       | (0, 0)       |
-| DI++-SDXL† (Equ to Diff-Instruct) | 1     | 2.6B   | 1.058          | 5.60        | 0.2253      | 33.02       | (0, 7.5)     |
-| DI++-SDXL† (Aligned Using KL)  | 1     | 2.6B   | 1.061          | 5.58        | 0.2260      | 32.94       | (100, 7.5)   |
-| DI*-OUT-SDXL (Out CFG)         | 1     | 2.6B   | 1.082          | 5.63        | 0.2263      | 33.03       | (100, 7.5)   |
+| DI++-SDXL (Aligned Using KL)  | 1     | 2.6B   | 0.846          | 5.50        | 0.2243      | 32.66       | (0, 0)       |
+| DI++-SDXL (Equ to Diff-Instruct) | 1     | 2.6B   | 1.058          | 5.60        | 0.2253      | 33.02       | (0, 7.5)     |
+| DI++-SDXL (Aligned Using KL)  | 1     | 2.6B   | 1.061          | 5.58        | 0.2260      | 32.94       | (100, 7.5)   |
+| DI*-OUT-SDXL (Out CFG)         | 1     | 2.6B   | 1.082          | 5.63        | 0.2263      | **33.03**       | (100, 7.5)   |
 | DI*-IN-SDXL (Baseline, No Reward) | 1     | 2.6B   | 0.782          | 5.74        | 0.2256      | 32.16       | (0, 0)       |
 | DI*-IN-SDXL (Equ to SIM, Only CFG) | 1     | 2.6B   | 1.049          | 5.66        | 0.2273      | 32.93       | (0, 7.5)     |
 | DI*-IN-SDXL (Human Reward + CFG) | 1     | 2.6B   | 1.031          | 5.69        | 0.2274      | 32.87       | (1, 7.5)     |
 | DI*-IN-SDXL                   | 1     | 2.6B   | 1.048          | 5.66        | 0.2278      | 32.91       | (10, 7.5)    |
 | DI*-IN-SDXL                   | 1     | 2.6B   | 1.020          | 5.68        | 0.2278      | 32.82       | (100, 4.5)   |
 | **DI*-IN-SDXL**                | 1     | 2.6B   | 1.067          | 5.74        | 0.2304      | 32.82       | (100, 7.5)   |
-| **DI*-IN-SDXL (Best, Longer Training)** | 1     | 2.6B   | 1.140          | 5.83        | 0.2331      | 32.75       | (100, 7.5)   |
+| **DI*-IN-SDXL (Best, Longer Training)** | **1**     | **2.6B**   | **1.140**          | **5.83**        | **0.2331**      | 32.75       | (100, 7.5)   |
 
 ---
 
@@ -49,10 +49,10 @@ Below are the tables from the paper converted into Markdown format:
 | 50STEP-SDXL-BASE (Podell et al., 2023) | 30.85       | 29.30         | 28.98      | 27.05   | 29.05     |
 | 50STEP-SDXL-DPO (Wallace et al., 2024) | 32.01       | 30.75         | 30.70      | 28.24   | 30.42     |
 | 28STEP-SD3.5-LARGE             | 31.89       | 30.19         | 30.39      | 28.01   | 30.12     |
-| 50STEP-FLUX-DEV                | 32.09       | 30.44         | 31.17      | 29.09   | 30.70     |
+| 50STEP-FLUX-DEV                | 32.09       | 30.44         | 31.17      | **29.09**   | 30.70     |
 | 1STEP-DMD2-SDXL (Yin et al., 2024) | 29.72       | 27.96         | 27.64      | 26.55   | 27.97     |
 | 1STEP-DIFF-INSTRUCT-SDXL (Luo et al., 2024b) | 31.15       | 29.71         | 29.72      | 28.20   | 29.70     |
 | 1STEP-SIM-SDXL (Luo et al., 2024c) | 31.97       | 30.46         | 30.13      | 28.08   | 30.16     |
 | 1STEP-DI++-SDXL (Luo, 2024)    | 31.19       | 29.88         | 29.61      | 28.21   | 29.72     |
 | **1STEP-DI*-SDXL (Ours)**      | 32.26       | 30.57         | 30.10      | 27.95   | 30.22     |
-| **1STEP-DI*-SDXL (Ours, Longer Training)** | 33.22       | 31.67         | 31.25      | 28.62   | 31.19     |
+| **1STEP-DI*-SDXL (Ours, Longer Training)** | **33.22**       | **31.67**         | **31.25**      | 28.62   | **31.19**     |
