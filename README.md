@@ -1,6 +1,10 @@
 # Diff-Instruct\*: Towards Human-Preferred One-Step Text-to-Image Generative Models
 
-Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through **score-based RLHF**.
+Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art preference alignment approach for 1024x1024 res 1-step text-to-image generative models. 
+
+Diff-Instruct\* is built upon a new **score-based RLHF** theory, which improves human preferences while maintaining generation diversity. 
+
+We provide open-sourced human-preferred 1-step t2i model along with other 1-step models trained by **Diff-Instruct Family**. 
 
 **DI\*-SDXL-1step** model is a leading human-preferred 1024x1024 text-to-image generative model that outperforms FLUX-dev-50step with only **1.88% inference time** and **29.30% GPU memory cost** on Parti and HPSv2.1 benchmarks. 
 
