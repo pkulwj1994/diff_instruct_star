@@ -8,6 +8,7 @@ Below are the tables from the paper converted into Markdown format:
 
 | Model                        | Steps ↓ | Type   | Params ↓ | Image Reward ↑ | AES Score ↑ | PickScore ↑ | CLIPScore ↑ | Inference Time ↓ (per 10 images) |
 |------------------------------|---------|--------|----------|----------------|-------------|-------------|-------------|----------------------------------|
+|||||||||**Multi-step Models**|
 | SDXL-BASE (Podell et al., 2023)      | 50      | UNET   | 2.6B    | 0.887          | 5.72        | 0.2274      | 32.72      | 111 sec                          |
 | SDXL-DPO (Wallace et al., 2024)     | 50      | UNET   | 2.6B    | 1.102          | 5.77        | 0.2290      | 33.03      | 111 sec                          |
 | SD3.5-LARGE (SD3)            | 28      | DIT    | 8B       | 1.133          | 5.70        | 0.2306      | 32.70      | 66.23 sec                        |
