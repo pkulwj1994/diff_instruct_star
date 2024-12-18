@@ -7,13 +7,13 @@ We introduce DI\*-SDX-1step Model, which is a leading human-preferred 1-step tex
 
 
 
-Here's a GitHub introduction page draft for the "DIFF-INSTRUCT*: Towards Human-Preferred One-Step Text-to-Image Generative Models" paper.
+Here's a GitHub introduction page draft for the "DIFF-INSTRUCT\*: Towards Human-Preferred One-Step Text-to-Image Generative Models" paper.
 
 ---
 
-# Diff-Instruct*: Towards Human-Preferred One-Step Text-to-Image Generative Models
+# Diff-Instruct\*: Towards Human-Preferred One-Step Text-to-Image Generative Models
 
-Welcome to the official repository for **Diff-Instruct*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through reinforcement learning with score-based divergence regularization.
+Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through reinforcement learning with score-based divergence regularization.
 
 ---
 
@@ -31,9 +31,9 @@ Welcome to the official repository for **Diff-Instruct*** (DI*), a state-of-the-
 
 ## Model Overview
 
-### Diff-Instruct* Framework
+### Diff-Instruct\* Framework
 
-The Diff-Instruct* framework frames human preference alignment as a reinforcement learning task with a reward function constrained by score-based divergence regularization. This approach:
+The Diff-Instruct\* framework frames human preference alignment as a reinforcement learning task with a reward function constrained by score-based divergence regularization. This approach:
 - Prevents mode collapse and preserves diversity.
 - Supports better image layouts, aesthetic details, and user prompt adherence.
 
@@ -73,7 +73,7 @@ MODEL_NAME = 'diff-instruct-star'
 
 
 if MODEL_NAME == 'diff-instruct-star':
-    # load Diff-Instruct*-1step model
+    # load Diff-Instruct\*-1step model
     pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/distar_r100_cfg7.5_inner_001485", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
@@ -173,29 +173,25 @@ images[-1].show()  # show the last image
 
 ## Citation
 
-If you use Diff-Instruct* in your research, please cite our paper:
+If you use Diff-Instruct\* in your research, please cite our paper:
 ```bibtex
 @article{luo2024diff,
   title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
   author={Luo, Weijian and Zhang, Colin and Zhang, Debing and Geng, Zhengyang},
   journal={arXiv preprint arXiv:2410.20898},
   year={2024}
-}```
+}
+```
 
 ---
 
 ## Contributing
 
-We welcome contributions to improve Diff-Instruct*. Please see the `CONTRIBUTING.md` file for details.
+We welcome contributions to improve Diff-Instruct\*. Please see the `CONTRIBUTING.md` file for details.
 
 ---
 
 For more information, visit our [paper](https://github.com/pkulwj1994/diff_instruct_star).
-
-
-
-
-
 
 
 
