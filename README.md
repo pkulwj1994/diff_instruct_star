@@ -4,6 +4,202 @@ We introduce DI\*-SDX-1step Model, which is a leading human-preferred 1-step tex
 
 ![image/jpeg](assets/big_demo_pr1.jpeg)
 
+
+
+
+Here's a GitHub introduction page draft for the "DIFF-INSTRUCT*: Towards Human-Preferred One-Step Text-to-Image Generative Models" paper.
+
+---
+
+# Diff-Instruct*: Towards Human-Preferred One-Step Text-to-Image Generative Models
+
+Welcome to the official repository for **Diff-Instruct*** (DI*), a state-of-the-art framework for training one-step text-to-image generative models that align with human preferences while maintaining exceptional image quality and diversity. This work introduces novel techniques to enhance human preference alignment in text-to-image generation through reinforcement learning with score-based divergence regularization.
+
+---
+
+## Highlights
+
+- **One-Step Text-to-Image Generation**: The DI*-SDXL-1step model generates high-resolution images (1024 × 1024) in a single forward pass, achieving unprecedented efficiency and performance.
+- **Human Preference Alignment**: Uses reinforcement learning with human feedback (RLHF) and a novel score-based divergence regularization for better alignment with human preferences.
+- **Efficiency**: Outperforms leading models with only **1.88% inference time** and **29.30% GPU memory cost** compared to multi-step diffusion models.
+- **State-of-the-Art Performance**:
+  - **Parti Prompt Benchmark**: Sets new records in PickScore, ImageReward, and CLIPScore.
+  - **HPSv2.1 Benchmark**: Achieves a record-breaking human preference score of 31.19.
+- **Open Source**: Industry-ready model available for public use.
+
+---
+
+## Model Overview
+
+### Diff-Instruct* Framework
+
+The Diff-Instruct* framework frames human preference alignment as a reinforcement learning task with a reward function constrained by score-based divergence regularization. This approach:
+- Prevents mode collapse and preserves diversity.
+- Supports better image layouts, aesthetic details, and user prompt adherence.
+
+### The DI*-SDXL-1step Model
+
+- **Architecture**: Based on Stable Diffusion-XL with 2.6 billion parameters.
+- **Performance**:
+  - Outperforms 12B FLUX-dev-50step and 8B SD3.5-large-28step in human preference benchmarks.
+  - Maintains competitive quality on COCO and Parti benchmarks with vastly reduced computational costs.
+
+---
+
+## Getting Started
+
+### Installation
+Clone the repository and install dependencies:
+```bash
+mkdir diff_instruct_star
+cd diff_instruct_star
+# pip install torch torchvision diffusers==0.29.0 transformers accelerate
+```
+
+#### 1-step UNet generation 
+
+```python
+import torch
+import numpy as np
+from diffusers import DiffusionPipeline, UNet2DConditionModel, LCMScheduler
+
+MODEL_NAME = 'diff-instruct-star'
+# MODEL_NAME = 'score-implicit-matching'
+# MODEL_NAME = 'diff-instruct++'
+# MODEL_NAME = 'diff-instruct'
+# MODEL_NAME = 'dmd2'
+# MODEL_NAME = 'sdxl'
+# MODEL_NAME = 'sdxl-dpo'
+
+
+if MODEL_NAME == 'diff-instruct-star':
+    # load Diff-Instruct*-1step model
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/distar_r100_cfg7.5_inner_001485", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+    pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
+    
+elif MODEL_NAME == 'score-implicit-matching':
+    # load score-implicit-matching-1step model
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/distar_r0_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+    pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
+
+elif MODEL_NAME == 'diff-instruct++':
+    # load diff-instruct++-1step model
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/dipp_r100_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+    pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
+
+elif MODEL_NAME == 'diff-instruct':
+    # load diff-instruct++-1step model
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/dipp_r0_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+    pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
+
+elif MODEL_NAME == 'dmd2':
+    # DMD2-1step model
+    unet = UNet2DConditionModel.from_config("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", subfolder="unet").to("cuda", torch.float16)
+    unet.load_state_dict(torch.load("/cpfs/user/weijian/data/download/tianweiy/DMD2/dmd2_sdxl_1step_unet_fp16.bin", map_location="cuda"))
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe.unet = unet
+    del unet
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+    pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
+
+elif MODEL_NAME == 'sdxl':
+    # SDXL
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe_kwargs = {"num_inference_steps": 50, "guidance_scale": 7.5, "width": 1024, "height":1024}
+    
+elif MODEL_NAME == 'sdxl-dpo':
+    # SDXL-dpo
+    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    unet = UNet2DConditionModel.from_pretrained("/cpfs/user/weijian/data/download/mhdang/dpo-sdxl-text2image-v1", subfolder="unet", torch_dtype=torch.float16).to('cuda')
+    pipe.unet = unet
+    del unet
+    pipe_kwargs = {"num_inference_steps": 50, "guidance_scale": 7.5, "width": 1024, "height":1024}
+
+else:
+    raise NotImplementedError('MODEL_NAME {} not implemented.'.format(MODEL_NAME))
+
+generator = torch.Generator("cuda").manual_seed(2024)
+
+# prompts = 'a volcano exploding next to a marina'
+# prompts = 'a shiba inu'
+# prompts = 'the skyline of New York City'
+# prompts = 'a pirate ship flying in the sky, surrounded by clouds'
+# prompts = 'a giant red dragon breathing fire'
+# prompts = 'an armchair'
+# prompts = 'Dreamy puppy surrounded by floating bubbles.'
+# prompts = 'waterfall'
+# prompts = 'A alpaca made of colorful building blocks, cyberpunk.'
+# prompts = 'a tiger'
+# prompts = 'a teapot'
+# prompts = 'baby playing with toys in the snow'
+# prompts = 'a bear sculpture'
+# prompts = 'a delicate apple (universe of stars inside the apple) made of opal hung on branch in the early morning light, adorned with glistening dewdrops. In the background beautiful valleys, divine iridescent glowing, opalescent textures, volumetric light, ethereal, sparkling, light inside body, bioluminescence, studio photo, highly detailed, sharp focus, photorealism, photorealism, 8k, best quality, ultra detail, hyper detail, hdr, hyper detail.'
+# prompts = 'a small cactus with a happy face in the Sahara desert.'
+# prompts = 'a stylish woman posing confidently with oversized sunglasses.'
+# prompts = 'A close-up of a woman’s face, lit by the soft glow of a neon sign in a dimly lit, retro diner, hinting at a narrative of longing and nostalgia'
+# prompts = 'A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.'
+# prompts = 'steampunk atmosphere, a stunning girl with a mecha musume aesthetic, adorned in intricate cyber gogle, digital art, fractal, 32k UHD high resolution, highres, professional photography, intricate details, masterpiece, perfect anatomy, cinematic angle , cinematic lighting, (dynamic warrior pose:1)'
+# prompts = 'a steam locomotive speeding through a desert'
+
+prompts = ['art collection style and fashion shoot, in the style of made of glass, dark blue and light pink, paul rand, solarpunk, camille vivier, beth didonato hair, barbiecore, hyper-realistic.',
+           'A dog that has been meditating all the time.',
+           'a capybara made of voxels sitting in a field',
+           'Eiffel tower in a forest, and Mount Everest rising behind',
+           'a steam locomotive speeding through a desert',
+           'a shiba inu']
+
+with torch.no_grad():
+    images = pipe(prompt=prompts, generator=generator, **pipe_kwargs).images
+
+for i,image in enumerate(images):
+    image.save("output_image_{}.png".format(i))  # save images
+
+images[-1].show()  # show the last image
+```
+
+### Usage
+1. **Generate Images**:
+   ```bash
+   python generate.py --prompt "A shiba inu sitting on a beach at sunset, 4k, ultra-realistic"
+   ```
+2. **Fine-Tune the Model**:
+   Use the provided scripts to train or fine-tune models with custom datasets and prompts.
+
+   
+
+## Citation
+
+If you use Diff-Instruct* in your research, please cite our paper:
+```bibtex
+@article{luo2024diff,
+  title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
+  author={Luo, Weijian and Zhang, Colin and Zhang, Debing and Geng, Zhengyang},
+  journal={arXiv preprint arXiv:2410.20898},
+  year={2024}
+}```
+
+---
+
+## Contributing
+
+We welcome contributions to improve Diff-Instruct*. Please see the `CONTRIBUTING.md` file for details.
+
+---
+
+For more information, visit our [paper](https://github.com/pkulwj1994/diff_instruct_star).
+
+
+
+
+
+
+
+
+
 ## Workflow of developing photo-realistic human-preferred 1-step text-to-image generative models
 
 ![image/jpeg](assets/pipeline_distar.png)
