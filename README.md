@@ -76,33 +76,33 @@ MODEL_NAME = 'diff-instruct-star'
 
 if MODEL_NAME == 'diff-instruct-star':
     # load Diff-Instruct\*-1step model
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/distar_r100_cfg7.5_inner_001485", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe = DiffusionPipeline.from_pretrained("william94/diff_instruct_star", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
     
 elif MODEL_NAME == 'score-implicit-matching':
     # load score-implicit-matching-1step model
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/distar_r0_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe = DiffusionPipeline.from_pretrained("william94/score_implicit_matching", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
 
 elif MODEL_NAME == 'diff-instruct++':
     # load diff-instruct++-1step model
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/dipp_r100_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe = DiffusionPipeline.from_pretrained("william94/diff_instruct_pp", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
 
 elif MODEL_NAME == 'diff-instruct':
     # load diff-instruct++-1step model
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/logs/output_models/dipp_r0_cfg7.5_inner_000256", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe = DiffusionPipeline.from_pretrained("diff_instruct", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     pipe_kwargs = {"num_inference_steps": 1, "guidance_scale": 0.0, "width": 1024, "height":1024, "timesteps": [399]}
 
 elif MODEL_NAME == 'dmd2':
     # DMD2-1step model
-    unet = UNet2DConditionModel.from_config("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", subfolder="unet").to("cuda", torch.float16)
-    unet.load_state_dict(torch.load("/cpfs/user/weijian/data/download/tianweiy/DMD2/dmd2_sdxl_1step_unet_fp16.bin", map_location="cuda"))
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    unet = UNet2DConditionModel.from_config("stabilityai/stable-diffusion-xl-base-1.0", subfolder="unet").to("cuda", torch.float16)
+    unet.load_state_dict(torch.load("tianweiy/DMD2/dmd2_sdxl_1step_unet_fp16.bin", map_location="cuda"))
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe.unet = unet
     del unet
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
@@ -110,13 +110,13 @@ elif MODEL_NAME == 'dmd2':
 
 elif MODEL_NAME == 'sdxl':
     # SDXL
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
     pipe_kwargs = {"num_inference_steps": 50, "guidance_scale": 7.5, "width": 1024, "height":1024}
     
 elif MODEL_NAME == 'sdxl-dpo':
     # SDXL-dpo
-    pipe = DiffusionPipeline.from_pretrained("/cpfs/user/weijian/data/download/stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
-    unet = UNet2DConditionModel.from_pretrained("/cpfs/user/weijian/data/download/mhdang/dpo-sdxl-text2image-v1", subfolder="unet", torch_dtype=torch.float16).to('cuda')
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    unet = UNet2DConditionModel.from_pretrained("mhdang/dpo-sdxl-text2image-v1", subfolder="unet", torch_dtype=torch.float16).to('cuda')
     pipe.unet = unet
     del unet
     pipe_kwargs = {"num_inference_steps": 50, "guidance_scale": 7.5, "width": 1024, "height":1024}
