@@ -256,7 +256,7 @@ images[-1].show()  # show the last image
 
 ## Citation
 
-If you use Diff-Instruct\* in your research, please cite our paper:
+If you use Diff-Instruct\* or Diff-Instruct family in your research, please cite our papers:
 ```bibtex
 @article{luo2024diffinstructstar,
   title={Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models},
