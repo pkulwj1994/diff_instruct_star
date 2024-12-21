@@ -225,8 +225,13 @@ images[-1].show()  # show the last image
 
 ![image/jpeg](assets/big_compare_tower.jpeg)
 
-![image/jpeg](assets/big_compare_lego.jpeg)
+![image/jpeg](assets/compare_alpaca.jpeg)
 
+![image/jpeg](assets/compare_armchair.jpeg)
+
+![image/jpeg](assets/compare_dragon.jpeg)
+
+![image/jpeg](assets/compare_volcano.jpeg)
 
 ## Photo-realistic image generation across diverse image domains
 
