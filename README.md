@@ -53,8 +53,6 @@ import torch
 import numpy as np
 from diffusers import DiffusionPipeline, UNet2DConditionModel, LCMScheduler
 from IPython.display import display
-from huggingface_hub import hf_hub_download
-from safetensors.torch import load_file
 
 MODEL_NAME = 'diff-instruct-star'
 # MODEL_NAME = 'diff-instruct-star'
