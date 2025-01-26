@@ -1,4 +1,4 @@
-# Diff-Instruct\*: 1-step Text-to-image Generative Models Aligned with Human Prefrences using Score-based RLHF[[Colab](https://colab.research.google.com/drive/1W9XoyPtb4mENcN8Zt0TKRWpL6b8RAPxT?usp=sharing)][[Huggingface Repo](https://huggingface.co/XDG-XHS)]
+# Diff-Instruct\*: 1-step Text-to-image Generative Models after Score-based RLHF[[Colab](https://colab.research.google.com/drive/1W9XoyPtb4mENcN8Zt0TKRWpL6b8RAPxT?usp=sharing)][[Huggingface Repo](https://huggingface.co/XDG-XHS)]
 
 Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art preference alignment approach for 1024x1024 res 1-step text-to-image generative models. Diff-Instruct\* is built upon a new **score-based RLHF** theory, which **improves human preferences while maintaining generation diversity**. 
 
