@@ -273,7 +273,7 @@ If you use Diff-Instruct\* or Diff-Instruct family in your research, please cite
 We welcome contributions to improve Diff-Instruct\*. Please see the `CONTRIBUTING.md` file for details.
 
 
-For more information, visit our [paper](https://drive.google.com/file/d/1L6OmXe722WtI_HABlo3u88yMiYpK8ugL/view?usp=sharing).
+For more information, visit our [paper](https://arxiv.org/abs/2410.20898).
 
 ## Acknolwegement
 
