@@ -19,7 +19,7 @@ We provide open-sourced human-preferred 1-step t2i model along with other 1-step
 
 We appreciate it if you could give your valuable feedback on models! Please contact us through email: pkulwj1994@icloud.com.
 
-## The Diff-Instruct Family
+## Some background knowledge on Diff-Instruct Family
 
 Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. 
 
