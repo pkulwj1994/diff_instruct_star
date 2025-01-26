@@ -56,7 +56,9 @@ from IPython.display import display
 
 MODEL_NAME = 'diff-instruct-star'
 
-# for below models, please checkout our notebook: https://github.com/pkulwj1994/diff_instruct_star/blob/main/distar_1024.ipynb
+# for below models, please checkout our notebook:
+# https://github.com/pkulwj1994/diff_instruct_star/blob/main/distar_1024.ipynb
+
 # MODEL_NAME = 'score-implicit-matching'
 # MODEL_NAME = 'diff-instruct++'
 # MODEL_NAME = 'diff-instruct'
