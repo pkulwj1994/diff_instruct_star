@@ -181,13 +181,9 @@ images[0].show()  # show the last image
 | **DI\*-IN-SDXL**                | 1     | 2.6B   | 1.067          | 5.74        | 0.2304      | 32.82       | (100, 7.5)   |
 | **DI\*-IN-SDXL (Longer Training)** | **1**     | **2.6B**   | **1.140**          | **5.83**        | **0.2331**      | 32.75       | (100, 7.5)   |
 
-![image/jpeg](assets/big_compare_woman.jpeg)
+![image/jpeg](assets/big_girl.jpeg)
 
-![image/jpeg](assets/big_compare_tower.jpeg)
-
-![image/jpeg](assets/compare_alpaca.jpeg)
-
-![image/jpeg](assets/compare_armchair.jpeg)
+![image/jpeg](assets/big_alpaca.jpeg)
 
 ![image/jpeg](assets/compare_dragon.jpeg)
 
