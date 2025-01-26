@@ -17,7 +17,7 @@ We provide open-sourced human-preferred 1-step t2i model along with other 1-step
 
 ## Contact: 
 
-pkulwj1994@icloud.com
+We appreciate it if you could give your valuable feedback on models! Please contact us through email: pkulwj1994@icloud.com.
 
 ## The Diff-Instruct Family
 
