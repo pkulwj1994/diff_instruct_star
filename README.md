@@ -8,13 +8,16 @@ We provide open-sourced human-preferred 1-step t2i model along with other 1-step
 
 ## Highlights
 
-- **One-Step Text-to-Image Generation**: The DI*-SDXL-1step model generates high-resolution images (1024 × 1024) in a single forward pass, achieving unprecedented efficiency and performance.
-- **Human Preference Alignment**: Uses reinforcement learning with human feedback (RLHF) and a novel score-based divergence regularization for better alignment with human preferences.
+- **One-Step Text-to-Image Generation**: The DI*-SDXL-1step model is a 2.6B UNet model that generates high-resolution images (1024 × 1024) in a single forward pass, making it very efficient. It takes only **1.88% inference time** compared to 12B FLUX-dev-50step model.
+- **Human Preference Alignment**: The model has been aligned with human preferences using a general score-based reinforcement learning with human feedback (RLHF), resulting in very strong human preference metrics (sometimes better than FLUX-dev-12B).
 - **Efficiency**: Outperforms leading models with only **1.88% inference time** and **29.30% GPU memory cost** compared to multi-step diffusion models.
-- **State-of-the-Art Performance**:
-  - **Parti Prompt Benchmark**: Sets new records in PickScore, ImageReward, and CLIPScore.
-  - **HPSv2.1 Benchmark**: Achieves a record-breaking human preference score of 31.19.
-- **Open Source**: Industry-ready model available for public use.
+  - **Parti Prompt Benchmark**: DI*-SDXL-1step sets new records in PickScore, ImageReward, and CLIPScore.
+  - **HPSv2.1 Benchmark**: DI*-SDXL-1step Achieves a record-breaking human preference score of 31.19.
+- **Open Source**: The model is fully open-sourced.
+
+## Contact: 
+
+pkulwj1994@icloud.com
 
 ## The Diff-Instruct Family
 
