@@ -52,6 +52,9 @@ cd diff_instruct_star
 import torch
 import numpy as np
 from diffusers import DiffusionPipeline, UNet2DConditionModel, LCMScheduler
+from IPython.display import display
+from huggingface_hub import hf_hub_download
+from safetensors.torch import load_file
 
 MODEL_NAME = 'diff-instruct-star'
 # MODEL_NAME = 'diff-instruct-star'
@@ -108,7 +111,7 @@ with torch.no_grad():
 # for i,image in enumerate(images):
 #     image.save("output_image_{}.png".format(i))  # save images
 
-images[0].show()  # show the last image
+display(images[0])  # show the last image
 ```
 
 ![image/jpeg](assets/big_demo_fixed.jpeg)
