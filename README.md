@@ -17,7 +17,7 @@ We provide open-sourced human-preferred 1-step t2i model along with other 1-step
 
 ## Contact: 
 
-We appreciate it if you could give your valuable feedback on models! Please contact us through email: pkulwj1994@icloud.com.
+We would appreciate it if you could give your valuable feedback on our models! Please contact [Weijian](https://pkulwj1994.github.io/) through email: pkulwj1994@icloud.com.
 
 ## How Diff-Instruct\* Works
 
