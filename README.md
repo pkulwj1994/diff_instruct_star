@@ -131,6 +131,13 @@ Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898)
 
 In this project, we implement Diff-Instruct family models using [SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) as reference diffusions and [DMD2](https://github.com/tianweiy/DMD2) as the initial 1-step model. We demonstrate that though Score-implicit Matching, Diff-Instruct++, and Diff-Instruct show decent performances, Diff-Instruct\* results in the best human-preference-aligned model, the **DI\*-SDXL-1step model**, which outperforms current leading diffusion models such as [FLUX-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) by [Black Forest Lab](https://blackforestlabs.ai/) and [SD3.5-large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) by [Stability AI](https://stability.ai/). 
 
+![image/jpeg](assets/big_girl.jpeg)
+
+![image/jpeg](assets/big_alpaca.jpeg)
+
+![image/jpeg](assets/compare_dragon.jpeg)
+
+![image/jpeg](assets/compare_volcano.jpeg)
 
 ## Quantitative and Qualitative comparison with other leading models: 12B FLUX-dev and 8B Stable Diffusion 3.5-large
 
@@ -185,14 +192,6 @@ In this project, we implement Diff-Instruct family models using [SDXL](https://h
 | DI\*-IN-SDXL                   | 1     | 2.6B   | 1.020          | 5.68        | 0.2278      | 32.82       | (100, 4.5)   |
 | **DI\*-IN-SDXL**                | 1     | 2.6B   | 1.067          | 5.74        | 0.2304      | 32.82       | (100, 7.5)   |
 | **DI\*-IN-SDXL (Longer Training)** | **1**     | **2.6B**   | **1.140**          | **5.83**        | **0.2331**      | 32.75       | (100, 7.5)   |
-
-![image/jpeg](assets/big_girl.jpeg)
-
-![image/jpeg](assets/big_alpaca.jpeg)
-
-![image/jpeg](assets/compare_dragon.jpeg)
-
-![image/jpeg](assets/compare_volcano.jpeg)
 
 ## Photo-realistic image generation across diverse image domains
 
