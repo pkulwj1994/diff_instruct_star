@@ -19,21 +19,6 @@ We provide open-sourced human-preferred 1-step t2i model along with other 1-step
 
 We appreciate it if you could give your valuable feedback on models! Please contact us through email: pkulwj1994@icloud.com.
 
-## Some background knowledge on Diff-Instruct Family
-
-Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. 
-
-[Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. 
-
-[Flow Generator Matching](https://arxiv.org/abs/2410.19310) further generalizes the general score-based divergence to Flow Matching Models. 
-
-[Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. 
-
-Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
-
-In this project, we implement Diff-Instruct family models using [SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) as reference diffusions and [DMD2](https://github.com/tianweiy/DMD2) as the initial 1-step model. We demonstrate that though Score-implicit Matching, Diff-Instruct++, and Diff-Instruct show decent performances, Diff-Instruct\* results in the best human-preference-aligned model, the **DI\*-SDXL-1step model**, which outperforms current leading diffusion models such as [FLUX-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) by [Black Forest Lab](https://blackforestlabs.ai/) and [SD3.5-large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) by [Stability AI](https://stability.ai/). 
-
-
 ## How Diff-Instruct\* Works
 
 ![image/jpeg](assets/pipeline_distar.png)
@@ -126,6 +111,23 @@ with torch.no_grad():
 images[0].show()  # show the last image
 ```
 
+![image/jpeg](assets/big_demo_fixed.jpeg)
+
+## Some background knowledge on Diff-Instruct Family
+
+Before [Diff-Instruct\*](https://arxiv.org/abs/2410.20898), [Diff-Instruct](https://arxiv.org/abs/2305.18455) is a diffusion distillation approach that distills pre-trained diffusion models into 1-step generative models by minimizing an integral KL divergence. 
+
+[Score-implicit Matching](https://arxiv.org/abs/2410.16794) developed a technique that distills into 1-step generative models by minimizing a general family of score-based divergences, which improves the distillation diversity than Diff-Instruct. 
+
+[Flow Generator Matching](https://arxiv.org/abs/2410.19310) further generalizes the general score-based divergence to Flow Matching Models. 
+
+[Diff-Instruct++](https://arxiv.org/abs/2410.18881) generalized Diff-Instruct to RLHF by introducing human reward through the lens of online PPO, showing surprising performances for preference alignment of 1-step text-to-image models. 
+
+Inspired by Diff-Instruct++, [Diff-Instruct\*](https://arxiv.org/abs/2410.20898) introduced a score-based RLHF approach, together with DI\*-SDXL-1step model, a record-breaking 1-step model aligned with human preferences while maintaining strong generation diversities. 
+
+In this project, we implement Diff-Instruct family models using [SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) as reference diffusions and [DMD2](https://github.com/tianweiy/DMD2) as the initial 1-step model. We demonstrate that though Score-implicit Matching, Diff-Instruct++, and Diff-Instruct show decent performances, Diff-Instruct\* results in the best human-preference-aligned model, the **DI\*-SDXL-1step model**, which outperforms current leading diffusion models such as [FLUX-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) by [Black Forest Lab](https://blackforestlabs.ai/) and [SD3.5-large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) by [Stability AI](https://stability.ai/). 
+
+
 ## Quantitative and Qualitative comparison with other leading models: 12B FLUX-dev and 8B Stable Diffusion 3.5-large
 
 ### Table 1: Quantitative comparisons of 1024 × 1024 resolution leading text-to-image models
@@ -159,10 +161,6 @@ images[0].show()  # show the last image
 | 1STEP-DI++-SDXL (Luo, 2024)    | 31.19       | 29.88         | 29.61      | 28.21   | 29.72     |
 | **1STEP-DI\*-SDXL (Ours)**      | 32.26       | 30.57         | 30.10      | 27.95   | 30.22     |
 | **1STEP-DI\*-SDXL (Ours, Longer Training)** | **33.22**       | **31.67**         | **31.25**      | 28.62   | **31.19**     |
-
-
-
-![image/jpeg](assets/big_demo_fixed.jpeg)
 
 
 ## Comparison with other 1-step Models and SDXL w/o DPO
