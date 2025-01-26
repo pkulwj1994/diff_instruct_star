@@ -1,4 +1,4 @@
-# Diff-Instruct\*: 1-step Text-to-image Models Outperform Flow-matching Models through Score-based RLHF[[Huggingface Repo](https://huggingface.co/XDG-XHS)][[Colab](https://github.com/pkulwj1994/diff_instruct_star/blob/main/distar_1024.ipynb)]
+# Diff-Instruct\*: 1-step Text-to-image Models with Score-based RLHF[[Huggingface Repo](https://huggingface.co/XDG-XHS)][[Colab](https://github.com/pkulwj1994/diff_instruct_star/blob/main/distar_1024.ipynb)]
 
 Welcome to the official repository for **Diff-Instruct\*** (DI*), a state-of-the-art preference alignment approach for 1024x1024 res 1-step text-to-image generative models. Diff-Instruct\* is built upon a new **score-based RLHF** theory, which **improves human preferences while maintaining generation diversity**. 
 
