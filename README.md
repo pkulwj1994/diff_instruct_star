@@ -43,7 +43,7 @@ Clone the repository and install dependencies:
 ```bash
 mkdir diff_instruct_star
 cd diff_instruct_star
-# pip install torch torchvision diffusers==0.29.0 transformers accelerate
+pip install torch torchvision diffusers==0.29.0 transformers accelerate
 ```
 
 #### 1-step UNet generation 
