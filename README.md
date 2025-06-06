@@ -279,4 +279,4 @@ For more information, check out our [paper](https://arxiv.org/abs/2410.20898).
 
 ## Acknolwegement
 
-This project was launched by the AGI team of Xiaohongshu Inc. The project was done while Weijian Luo was a full-time student at Peking University. Our model was developed based on our internal reimplementation of the Diff-Instruct paper. We do acknowledge the DMD2 project which provides high-quality open-sourced 1-step text-to-image models that we have used as the initial model (i.e., a model without preference alignment). We also acknowledge the authors of the SiD-LSG project for their high-quality implementation of SD1.5-based diffusion distillation models. 
+This project was launched by the **Hi Lab of Xiaohongshu Inc**. Our model was developed based on our internal reimplementation of the Diff-Instruct paper. We do acknowledge the DMD2 project which provides high-quality open-sourced 1-step text-to-image models that we have used as the initial model (i.e., a model without preference alignment). We also acknowledge the authors of the SiD-LSG project for their high-quality implementation of SD1.5-based diffusion distillation models. 
