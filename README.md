@@ -1,4 +1,4 @@
-# [[ICML2025](https://icml.cc/virtual/2025/poster/46154)]David and Goliath: Small One-step Model Beats Large Diffusion with Score Post-training[[Colab](https://colab.research.google.com/drive/1W9XoyPtb4mENcN8Zt0TKRWpL6b8RAPxT?usp=sharing)][[Huggingface Repo](https://huggingface.co/XDG-XHS)]
+# David and Goliath: Small One-step Model Beats Large Diffusion with Score Post-training[[[ICML 2025](https://icml.cc/virtual/2025/poster/46154)][Colab](https://colab.research.google.com/drive/1W9XoyPtb4mENcN8Zt0TKRWpL6b8RAPxT?usp=sharing)][[Huggingface Repo](https://huggingface.co/XDG-XHS)]
 
 PaperLink: https://arxiv.org/pdf/2410.20898
 
